@@ -42,7 +42,9 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 let navItems = Array.from(document.querySelectorAll("a"));
-navItems.forEach((item, index) => item.textContent = siteContent["nav"][`nav-item-${index}`]);
+navItems.forEach((item, index) => {
+  item.textContent = siteContent["nav"][`nav-item-${index+1}`];
+  item.style.color = "green"});
 
 let ctaText = document.querySelector("h1");
 ctaText.textContent = siteContent["cta"]["h1"];
