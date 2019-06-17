@@ -41,5 +41,11 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-let navItems = Array.from(document.querySelectorAll("nav a"));
-navItems[0].textContent = "Services";
+let navItems = Array.from(document.querySelectorAll("a"));
+navItems.forEach((item, index) => item.textContent = siteContent["nav"][`nav-item-${index}`]);
+
+let ctaText = document.querySelector("h1");
+ctaText.textContent = siteContent["cta"]["h1"];
+
+let ctaButton = document.querySelector("button");
+ctaButton.textContent = siteContent["cta"]["button"];
