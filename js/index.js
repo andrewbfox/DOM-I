@@ -44,7 +44,22 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 let navItems = Array.from(document.querySelectorAll("a"));
 navItems.forEach((item, index) => {
   item.textContent = siteContent["nav"][`nav-item-${index+1}`];
-  item.style.color = "green"});
+  item.style.color = "green";
+});
+
+// append and prepend nav a elements
+
+let prependedAnchor = document.createElement("a");
+prependedAnchor.textContent = "Prepend";
+prependedAnchor.style.color = "green";
+document.querySelector("nav").prepend(prependedAnchor);
+
+let appendedAnchor = document.createElement("a");
+appendedAnchor.textContent = "Append";
+appendedAnchor.style.color = "green";
+document.querySelector("nav").appendChild(appendedAnchor);
+
+// cta
 
 let ctaText = document.querySelector("h1");
 ctaText.textContent = siteContent["cta"]["h1"];
@@ -53,7 +68,7 @@ let ctaButton = document.querySelector("button");
 ctaButton.textContent = siteContent["cta"]["button"];
 
 let ctaImg = document.querySelector("#cta-img");
-ctaImg.setAttribute("src", siteContent["cta"]["img-src"]);
+ctaImg.src = siteContent["cta"]["img-src"];
 
 // top content
 
@@ -72,7 +87,7 @@ aboutP.textContent = siteContent["main-content"]["about-content"];
 // middle image
 
 let middleImg = document.querySelector("#middle-img");
-middleImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+middleImg.src = siteContent["main-content"]["middle-img-src"];
 
 // bottom content
 
