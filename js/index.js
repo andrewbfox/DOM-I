@@ -63,20 +63,17 @@ document.querySelector("nav").appendChild(appendedAnchor);
 
 let ctaText = document.querySelector("h1");
 let interim = siteContent["cta"]["h1"].split(" ");
+
 ctaText.textContent = interim[0];
-let ctaBreak1 = document.createElement("br");
-//ctaBreak1.style.height = 0;
-ctaBreak1.style.border = "1px solid red";
-document.querySelector(".cta-text").insertBefore(ctaBreak1, document.querySelector("button"));
 let ctaText2 = document.createElement("h1");
 ctaText2.textContent = interim[2];
 document.querySelector(".cta-text").insertBefore(ctaText2, document.querySelector("button"));
-let ctaBreak2 = document.createElement("br");
-ctaBreak2.style.height = 0;
-document.querySelector(".cta-text").insertBefore(ctaBreak2, document.querySelector("button"));
 let ctaText3 = document.createElement("h1");
 ctaText3.textContent = interim[4];
 document.querySelector(".cta-text").insertBefore(ctaText3, document.querySelector("button"));
+
+const ctaH1s = document.querySelectorAll("h1");
+ctaH1s.forEach((item) => item.style.marginBottom = 0);
 
 let ctaButton = document.querySelector("button");
 ctaButton.textContent = siteContent["cta"]["button"];
